@@ -10,7 +10,6 @@ size = Vector2(32, 32)
 [node name="Light" type="Area2D"]
 script = ExtResource("1_ot7yj")
 speed = 10.0
-kill_speed = 0.1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -21,4 +20,4 @@ shape = SubResource("RectangleShape2D_6ya1p")
 
 [node name="PointLight" type="PointLight2D" parent="."]
 texture = ExtResource("2_4mx3t")
-texture_scale = 10.0
+texture_scale = 5.0

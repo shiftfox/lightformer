@@ -24,3 +24,4 @@ texture = ExtResource("2_cgcmi")
 shape = SubResource("RectangleShape2D_7okma")
 
 [node name="Wand" parent="." instance=ExtResource("3_4suad")]
+fire_rate = 3.0

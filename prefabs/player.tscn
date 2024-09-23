@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0ol4a78thm14"]
+[gd_scene load_steps=6 format=3 uid="uid://c0ol4a78thm14"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nv0jr"]
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="2_cgcmi"]
 [ext_resource type="PackedScene" uid="uid://70c12jq4jdbu" path="res://prefabs/wand.tscn" id="3_4suad"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="4_q6ewe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7okma"]
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_nv0jr")
 speed = 150.0
 lerp_speed = 10.0
@@ -25,3 +27,7 @@ shape = SubResource("RectangleShape2D_7okma")
 
 [node name="Wand" parent="." instance=ExtResource("3_4suad")]
 fire_rate = 3.0
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("4_q6ewe")
+health = 100.0

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw21kq408hve"]
+
+[ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_cuc3g"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_d3phr"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="3_17drc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rest"]
+size = Vector2(32, 32)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_d3phr")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cuc3g")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6rest")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("3_17drc")
+health = 100.0

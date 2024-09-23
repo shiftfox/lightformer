@@ -11,6 +11,13 @@ position_smoothing_enabled = true
 script = ExtResource("1_ge6b0")
 target = NodePath("../Player")
 
+[node name="ColorRect" type="ColorRect" parent="Camera"]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(1, 1, 1, 0.0862745)
+
 [node name="Player" parent="." instance=ExtResource("1_tqmqx")]
 
 [node name="StaticBody" type="StaticBody2D" parent="."]

@@ -5,17 +5,23 @@ extends CharacterBody2D
 @export var jump_force: float
 @export var jump_time: float
 @export var coyote_time: float
+@export var glide_gravity_multiplier: float
 var coyote_timer: float
 var jump_timer: float
 var jumping: bool
+var gravity: Vector2
 
 func can_jump() -> bool:
 	return coyote_timer < coyote_time or is_on_floor()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += gravity * delta
 		coyote_timer += delta
+		if Input.is_action_pressed("glide") and !jumping:
+			gravity = get_gravity() * glide_gravity_multiplier
+		else:
+			gravity = get_gravity()
 	else:
 		jumping = false
 		jump_timer = 0

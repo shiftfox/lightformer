@@ -14,6 +14,7 @@ lerp_speed = 10.0
 jump_force = 300.0
 jump_time = 0.25
 coyote_time = 0.2
+glide_gravity_multiplier = 0.1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

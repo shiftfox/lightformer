@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0ol4a78thm14"]
+[gd_scene load_steps=5 format=3 uid="uid://c0ol4a78thm14"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nv0jr"]
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="2_cgcmi"]
+[ext_resource type="PackedScene" uid="uid://70c12jq4jdbu" path="res://prefabs/wand.tscn" id="3_4suad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7okma"]
 size = Vector2(32, 32)
@@ -20,3 +21,5 @@ texture = ExtResource("2_cgcmi")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7okma")
+
+[node name="Wand" parent="." instance=ExtResource("3_4suad")]

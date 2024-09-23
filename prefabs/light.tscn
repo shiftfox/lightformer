@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw46dl8cpvexc"]
+
+[ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_4v1do"]
+[ext_resource type="Script" path="res://scripts/light.gd" id="1_ot7yj"]
+[ext_resource type="Texture2D" uid="uid://day326p744ey3" path="res://graphics/sprites/light.png" id="2_4mx3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya1p"]
+size = Vector2(32, 32)
+
+[node name="Light" type="Area2D"]
+script = ExtResource("1_ot7yj")
+speed = 10.0
+kill_speed = 0.1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_4v1do")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6ya1p")
+
+[node name="PointLight" type="PointLight2D" parent="."]
+texture = ExtResource("2_4mx3t")
+texture_scale = 10.0

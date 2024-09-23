@@ -20,3 +20,6 @@ polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
 
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="StaticBody"]
 polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

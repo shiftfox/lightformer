@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://70c12jq4jdbu"]
+
+[ext_resource type="Script" path="res://scripts/wand.gd" id="1_5stl6"]
+[ext_resource type="PackedScene" uid="uid://cw46dl8cpvexc" path="res://prefabs/light.tscn" id="2_tvx8c"]
+[ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="2_xodoj"]
+
+[node name="Wand" type="Node2D"]
+script = ExtResource("1_5stl6")
+bullet_prefab = ExtResource("2_tvx8c")
+fire_rate = 10.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_xodoj")
+
+[node name="FirePoint" type="Marker2D" parent="."]
+position = Vector2(40, 0)

@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://bm712ocpcav7w"]
+[gd_scene load_steps=3 format=3 uid="uid://bm712ocpcav7w"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
+[ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
 
 [node name="Sandbox" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+script = ExtResource("1_ge6b0")
+target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("1_tqmqx")]
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+
+[node name="Polygon" type="Polygon2D" parent="StaticBody"]
+polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="StaticBody"]
+polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)

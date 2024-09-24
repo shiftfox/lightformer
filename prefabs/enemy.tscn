@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw21kq408hve"]
+[gd_scene load_steps=7 format=3 uid="uid://dw21kq408hve"]
 
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_cuc3g"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_d3phr"]
@@ -9,6 +9,9 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avpwk"]
 size = Vector2(33, 33)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hy0nk"]
+radius = 128.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_d3phr")
@@ -30,5 +33,12 @@ health = 100.0
 [node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_avpwk")
 
+[node name="DetectionRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DetectionRadius"]
+shape = SubResource("CircleShape2D_hy0nk")
+
 [connection signal="death" from="Health" to="." method="on_health_death"]
 [connection signal="area_entered" from="Hitbox" to="." method="hitbox_area_entered"]
+[connection signal="area_entered" from="DetectionRadius" to="." method="on_detection_radius_entered"]
+[connection signal="area_exited" from="DetectionRadius" to="." method="on_detection_radius_exited"]

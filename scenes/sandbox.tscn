@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
-[ext_resource type="PackedScene" uid="uid://dw21kq408hve" path="res://prefabs/enemy.tscn" id="3_vk7s5"]
+[ext_resource type="PackedScene" uid="uid://dvcl5vhk8obv6" path="res://prefabs/shooter_enemy.tscn" id="3_5go33"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -17,14 +17,9 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 324.0
-color = Color(1, 1, 1, 0.0862745)
+color = Color(0.122252, 0.122252, 0.122252, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_tqmqx")]
-
-[node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_vk7s5")]
-position = Vector2(227, 60)
-gravity = Vector2(0, 980)
-target = NodePath("../Player")
 
 [node name="StaticBody" type="StaticBody2D" parent="."]
 
@@ -36,3 +31,6 @@ polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="ShooterEnemy" parent="." instance=ExtResource("3_5go33")]
+position = Vector2(265, 71)

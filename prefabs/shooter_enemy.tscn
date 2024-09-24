@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvcl5vhk8obv6"]
+
+[ext_resource type="PackedScene" uid="uid://dw21kq408hve" path="res://prefabs/enemy.tscn" id="1_bsdko"]
+[ext_resource type="Script" path="res://scripts/shooter_enemy.gd" id="2_a23pc"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="3_adivu"]
+[ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="3_qn321"]
+[ext_resource type="PackedScene" uid="uid://cli06dajpfvfm" path="res://prefabs/bullet.tscn" id="4_kp5h8"]
+
+[node name="ShooterEnemy" instance=ExtResource("1_bsdko")]
+script = ExtResource("2_a23pc")
+max_distance = 64.0
+gravity = Vector2(0, 980)
+
+[node name="Weapon" type="Node2D" parent="." index="5"]
+script = ExtResource("3_adivu")
+fire_rate = 3.0
+inaccuracy = 0.1
+bullet_speed = 500.0
+bullet_prefab = ExtResource("4_kp5h8")
+
+[node name="Sprite" type="Sprite2D" parent="Weapon" index="0"]
+position = Vector2(32, 2)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("3_qn321")
+
+[node name="FirePoint" type="Marker2D" parent="Weapon" index="1"]
+position = Vector2(32, 0)

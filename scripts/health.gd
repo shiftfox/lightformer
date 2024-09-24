@@ -9,6 +9,7 @@ signal death()
 func damage(amount: float) -> void:
 	health -= amount
 	if health <= 0:
-		return death.emit()
+		death.emit()
+		return
 	damaged.emit(amount)
 	

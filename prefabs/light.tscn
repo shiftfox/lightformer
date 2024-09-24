@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/light.gd" id="1_ot7yj"]
 [ext_resource type="Texture2D" uid="uid://day326p744ey3" path="res://graphics/sprites/light.webp" id="2_4mx3t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya1p"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4urg"]
+radius = 128.0
 
 [node name="Light" type="Area2D"]
 script = ExtResource("1_ot7yj")
@@ -16,7 +16,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_4v1do")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6ya1p")
+shape = SubResource("CircleShape2D_u4urg")
 
 [node name="PointLight" type="PointLight2D" parent="."]
 texture = ExtResource("2_4mx3t")

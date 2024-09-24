@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw21kq408hve"]
+[gd_scene load_steps=6 format=3 uid="uid://dw21kq408hve"]
 
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_cuc3g"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_d3phr"]
@@ -7,8 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rest"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avpwk"]
+size = Vector2(33, 33)
+
 [node name="Enemy" type="CharacterBody2D"]
-collision_mask = 2
 script = ExtResource("1_d3phr")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -21,3 +23,11 @@ shape = SubResource("RectangleShape2D_6rest")
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("3_17drc")
 health = 100.0
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_avpwk")
+
+[connection signal="death" from="Health" to="." method="on_health_death"]
+[connection signal="area_entered" from="Hitbox" to="." method="hitbox_area_entered"]

@@ -1,5 +1,6 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+@onready var health = $Health
 @export var speed: float
 @export var lerp_speed: float
 @export var jump_force: float
@@ -42,3 +43,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, lerp_speed * delta)
 	
 	move_and_slide()
+
+func on_health_death() -> void:
+	queue_free()

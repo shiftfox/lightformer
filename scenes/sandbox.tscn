@@ -34,5 +34,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_vk7s5")]
 position = Vector2(227, 60)
-speed = 250.0
+speed = 125.0
 target = NodePath("../Player")

@@ -12,7 +12,8 @@ func _physics_process(delta: float) -> void:
 	var distance = position.distance_to(target.position)
 	if distance > max_distance:
 		var direction = position.direction_to(target.position)
-		velocity = direction * speed
+		if !gravity: velocity = direction * speed
+		else: velocity.x = direction.x * speed
 	move_and_slide()
 
 func hitbox_area_entered(area: Area2D):

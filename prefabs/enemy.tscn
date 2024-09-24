@@ -12,6 +12,7 @@ size = Vector2(33, 33)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_d3phr")
+speed = 125.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

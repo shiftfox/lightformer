@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0ol4a78thm14"]
+[gd_scene load_steps=8 format=3 uid="uid://c0ol4a78thm14"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nv0jr"]
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="2_cgcmi"]
 [ext_resource type="PackedScene" uid="uid://70c12jq4jdbu" path="res://prefabs/wand.tscn" id="3_4suad"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="4_q6ewe"]
+[ext_resource type="Texture2D" uid="uid://day326p744ey3" path="res://graphics/sprites/light.webp" id="5_gcutd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7okma"]
 size = Vector2(32, 32)
@@ -39,5 +40,9 @@ health = 100.0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_amjq7")
+
+[node name="PointLight" type="PointLight2D" parent="."]
+texture = ExtResource("5_gcutd")
+texture_scale = 0.25
 
 [connection signal="death" from="Health" to="." method="on_health_death"]

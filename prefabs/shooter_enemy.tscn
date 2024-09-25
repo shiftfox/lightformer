@@ -8,14 +8,14 @@
 
 [node name="ShooterEnemy" instance=ExtResource("1_bsdko")]
 script = ExtResource("2_a23pc")
-max_distance = 64.0
+max_distance = 128.0
 gravity = Vector2(0, 980)
 
 [node name="Weapon" type="Node2D" parent="." index="5"]
 script = ExtResource("3_adivu")
 fire_rate = 3.0
 inaccuracy = 0.1
-bullet_speed = 500.0
+bullet_speed = 1000.0
 bullet_prefab = ExtResource("4_kp5h8")
 
 [node name="Sprite" type="Sprite2D" parent="Weapon" index="0"]

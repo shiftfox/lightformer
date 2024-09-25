@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw21kq408hve"]
+[gd_scene load_steps=9 format=3 uid="uid://dw21kq408hve"]
 
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_cuc3g"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_d3phr"]
+[ext_resource type="Shader" path="res://scripts/enemy.gdshader" id="2_d8xgf"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_17drc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrfvq"]
+shader = ExtResource("2_d8xgf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rest"]
 size = Vector2(32, 32)
@@ -16,6 +20,12 @@ radius = 128.0
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_d3phr")
 speed = 125.0
+
+[node name="Outline" type="Sprite2D" parent="."]
+modulate = Color(0.247059, 0, 1, 1)
+material = SubResource("ShaderMaterial_hrfvq")
+scale = Vector2(0.313, 0.313)
+texture = ExtResource("1_cuc3g")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

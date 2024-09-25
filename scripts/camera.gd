@@ -4,4 +4,5 @@ extends Camera2D
 @export var t_offset: Vector2
 
 func _process(_delta: float) -> void:
-	position = target.position + t_offset
+	if is_instance_valid(target):
+		position = target.position + t_offset

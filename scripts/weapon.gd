@@ -17,5 +17,6 @@ func _process(delta: float) -> void:
 			var rot = $FirePoint.global_rotation + randf_range(-inaccuracy, inaccuracy)
 			bullet.rotation = rot
 			bullet.position = $FirePoint.global_position
+			bullet.side = Bullet.PlayerSide.ENEMIES
 			bullet.fire(bullet_speed)
 			get_tree().current_scene.add_child(bullet)

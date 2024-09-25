@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Bullet extends RigidBody2D
 
 enum PlayerSide {
 	ENEMIES,
@@ -16,5 +16,5 @@ func hitbox_area_entered(area: Area2D) -> void:
 		(area.get_parent() is Enemy and side == PlayerSide.PLAYER):
 		area.get_parent().health.damage(damage)
 
-func hitbox_body_entered(body: Node2D) -> void:
+func hitbox_body_entered(_body: Node2D) -> void:
 	queue_free()

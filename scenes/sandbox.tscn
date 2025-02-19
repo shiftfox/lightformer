@@ -30,7 +30,7 @@ polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
 polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.05, 0.05, 0.05, 1)
 
 [node name="ShooterEnemy" parent="." instance=ExtResource("3_5go33")]
 position = Vector2(265, 71)

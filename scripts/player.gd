@@ -46,3 +46,5 @@ func _physics_process(delta: float) -> void:
 
 func on_health_death() -> void:
 	queue_free()
+	Scenes.refresh()
+	Particles.spawn("death", self)

@@ -5,6 +5,7 @@ class_name Light extends Area2D
 @export var bullet_prefab: PackedScene
 @export var bullet_speed: float
 @export var bullet_count: int
+@export var min_scale: float
 @export var radius: float
 var target_scale: Vector2
 var max_scale: Vector2
@@ -16,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = lerp(position, get_global_mouse_position(), speed * delta)
 	scale = lerp(scale, target_scale, kill_speed * delta)
-	if scale.x <= 0: queue_free()
+	if scale.x <= min_scale: queue_free()
 	if Input.is_action_just_pressed("destroy_light"):
 		var angle_step = TAU / bullet_count
 		for i in range(bullet_count):

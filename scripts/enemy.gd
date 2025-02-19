@@ -29,6 +29,7 @@ func hitbox_area_entered(area: Area2D):
 		on_health_death()
 
 func on_health_death() -> void:
+	Particles.spawn("death", self)
 	queue_free()
 
 func on_detection_radius_entered(area: Area2D) -> void:

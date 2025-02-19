@@ -17,8 +17,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = lerp(position, get_global_mouse_position(), speed * delta)
 	scale = lerp(scale, target_scale, kill_speed * delta)
-	if scale.x <= min_scale: queue_free()
+	if scale.x <= min_scale:
+		Particles.spawn("death", self)
+		queue_free()
 	if Input.is_action_just_pressed("destroy_light"):
+		Particles.spawn("hit", self)
 		var angle_step = TAU / bullet_count
 		for i in range(bullet_count):
 			var angle = i * angle_step

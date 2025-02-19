@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cli06dajpfvfm"]
 
-[ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="1_j8n2b"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_r1pph"]
+[ext_resource type="Texture2D" uid="uid://dpdvscantuf5r" path="res://graphics/sprites/circle.png" id="2_4ar05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdl52"]
 size = Vector2(8, 8)
@@ -12,8 +12,8 @@ damage = 25.0
 side = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.063, 0.063)
-texture = ExtResource("1_j8n2b")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4ar05")
 
 [node name="Hitbox" type="Area2D" parent="."]
 

@@ -1,6 +1,6 @@
 class_name Bullet extends RigidBody2D
 
-enum PlayerSide {
+enum PlayerSide { # this should be a `:`
 	ENEMIES,
 	PLAYER
 }
@@ -17,4 +17,5 @@ func hitbox_area_entered(area: Area2D) -> void:
 		area.get_parent().health.damage(damage)
 
 func hitbox_body_entered(_body: Node2D) -> void:
+	Particles.spawn("hit", self)
 	queue_free()

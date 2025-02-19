@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@onready var health = $Health
+@onready var health: Health = $Health
 @export var speed: float
 @export var lerp_speed: float
 @export var jump_force: float
@@ -43,6 +43,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, lerp_speed * delta)
 	
 	move_and_slide()
+
+func apply_effect(effect: Effect, duration: int) -> void:
+	add_child(effect)
+	effect._on_applied()
+	await get_tree().create_timer(duration).timeout
+	effect._on_removed()
+	effect.queue_free()
 
 func on_health_death() -> void:
 	queue_free()

@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvcl5vhk8obv6"]
+[gd_scene load_steps=5 format=3 uid="uid://dvcl5vhk8obv6"]
 
-[ext_resource type="PackedScene" uid="uid://dw21kq408hve" path="res://prefabs/enemy.tscn" id="1_bsdko"]
-[ext_resource type="Script" path="res://scripts/shooter_enemy.gd" id="2_a23pc"]
+[ext_resource type="PackedScene" uid="uid://dw21kq408hve" path="res://prefabs/enemies/enemy.tscn" id="1_bsdko"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="3_adivu"]
 [ext_resource type="Texture2D" uid="uid://c1fe8jqihe25o" path="res://graphics/sprites/icon.svg" id="3_qn321"]
 [ext_resource type="PackedScene" uid="uid://cli06dajpfvfm" path="res://prefabs/bullet.tscn" id="4_kp5h8"]
 
 [node name="ShooterEnemy" instance=ExtResource("1_bsdko")]
-script = ExtResource("2_a23pc")
 max_distance = 128.0
 gravity = Vector2(0, 980)
 

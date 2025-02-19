@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm712ocpcav7w"]
+[gd_scene load_steps=6 format=3 uid="uid://bm712ocpcav7w"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
-[ext_resource type="PackedScene" uid="uid://dvcl5vhk8obv6" path="res://prefabs/shooter_enemy.tscn" id="3_5go33"]
+[ext_resource type="PackedScene" uid="uid://dvcl5vhk8obv6" path="res://prefabs/enemies/shooter_enemy.tscn" id="3_5go33"]
+[ext_resource type="PackedScene" uid="uid://cbpedxkwox2j5" path="res://prefabs/effect_collectible.tscn" id="4_310de"]
+[ext_resource type="PackedScene" uid="uid://c7jr0ybbrbycm" path="res://prefabs/effects/night_vision_effect.tscn" id="5_7vinr"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -34,3 +36,8 @@ color = Color(0.05, 0.05, 0.05, 1)
 
 [node name="ShooterEnemy" parent="." instance=ExtResource("3_5go33")]
 position = Vector2(265, 71)
+
+[node name="EffectCollectible" parent="." instance=ExtResource("4_310de")]
+position = Vector2(-189, 22)
+duration = 5
+effect_prefab = ExtResource("5_7vinr")

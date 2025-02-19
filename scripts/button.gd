@@ -12,13 +12,15 @@ func _ready():
 
 func enable_target():
 	sprite.frame += 1
-	target.show()
-	target.process_mode = Node.PROCESS_MODE_INHERIT
+	if is_instance_valid(target):
+		target.show()
+		target.process_mode = Node.PROCESS_MODE_INHERIT
 
 func disable_target():
 	sprite.frame -= 1
-	target.hide()
-	target.process_mode = Node.PROCESS_MODE_DISABLED
+	if is_instance_valid(target):
+		target.hide()
+		target.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

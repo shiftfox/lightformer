@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm712ocpcav7w"]
+[gd_scene load_steps=9 format=3 uid="uid://bm712ocpcav7w"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crp334grxje5e" path="res://prefabs/button.tscn" id="5_knabb"]
 [ext_resource type="PackedScene" uid="uid://d2hwu2uaqacgf" path="res://prefabs/door.tscn" id="6_f80rh"]
 [ext_resource type="PackedScene" uid="uid://byes8l4lo73ov" path="res://prefabs/key.tscn" id="7_23iu2"]
+[ext_resource type="Script" path="res://scripts/lightning.gd" id="8_hlp6t"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -43,8 +44,9 @@ effect_prefab = ExtResource("5_7vinr")
 
 [node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_knabb")]
 position = Vector2(185, 147)
+toggle = true
 should_enable_target = true
-target = NodePath("../EffectCollectible")
+target = NodePath("../Key")
 
 [node name="Door" parent="." instance=ExtResource("6_f80rh")]
 position = Vector2(557, 147)
@@ -52,3 +54,10 @@ position = Vector2(557, 147)
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_23iu2")]
 position = Vector2(70, 92)
 door = NodePath("../Door")
+
+[node name="Lightning" type="Timer" parent="."]
+script = ExtResource("8_hlp6t")
+min_range = 15.0
+max_range = 25.0
+
+[connection signal="timeout" from="Lightning" to="Lightning" method="_on_timeout"]

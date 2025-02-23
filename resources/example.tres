@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=3 format=3 uid="uid://di6ka7y8jkdir"]
+
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_6um2t"]
+[ext_resource type="Resource" uid="uid://bnkgiry5e8hoc" path="res://resources/example2.tres" id="1_khscx"]
+
+[resource]
+script = ExtResource("1_6um2t")
+text = "hello world!"
+next = ExtResource("1_khscx")

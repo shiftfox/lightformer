@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm712ocpcav7w"]
+[gd_scene load_steps=10 format=3 uid="uid://bm712ocpcav7w"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
+[ext_resource type="PackedScene" uid="uid://b6u86mo5lcsha" path="res://prefabs/dialog_box.tscn" id="1_riv6n"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
 [ext_resource type="PackedScene" uid="uid://cbpedxkwox2j5" path="res://prefabs/effect_collectible.tscn" id="4_310de"]
 [ext_resource type="PackedScene" uid="uid://c7jr0ybbrbycm" path="res://prefabs/effects/night_vision_effect.tscn" id="5_7vinr"]
@@ -10,6 +11,20 @@
 [ext_resource type="Script" path="res://scripts/lightning.gd" id="8_hlp6t"]
 
 [node name="Sandbox" type="Node2D"]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" parent="Canvas" instance=ExtResource("1_riv6n")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -250.0
+offset_right = 432.0
+offset_bottom = 0.0
+grow_vertical = 0
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(2, 2)

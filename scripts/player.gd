@@ -33,6 +33,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and jumping and jump_timer < jump_time:
 		jump_timer += delta
 		velocity.y = -jump_force
+	if Input.is_key_pressed(KEY_E):
+		DialogBox.show_dialog(load("res://resources/example.tres"))
 	if velocity.y >= 0:
 		jumping = false
 	

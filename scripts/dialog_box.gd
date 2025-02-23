@@ -1,4 +1,4 @@
-extends ColorRect
+class_name DialogBox extends ColorRect
 
 static var instance = self
 
@@ -11,11 +11,10 @@ var dialog: Dialog
 var character: int
 
 func _ready():
-	run(load("res://resources/example.tres"))
 	char_time = char_time / 1000
+	instance = self
 
 func _process(delta: float) -> void:
-	print(dialog.text)
 	if not dialog: return
 	char_timer += delta
 	if char_timer >= char_time and character <= dialog.text.length():

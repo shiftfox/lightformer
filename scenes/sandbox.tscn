@@ -15,6 +15,7 @@
 [node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" parent="Canvas" instance=ExtResource("1_riv6n")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

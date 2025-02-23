@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bm712ocpcav7w"]
 
-[ext_resource type="Script" path="res://scripts/camera.gd" id="1_ge6b0"]
+[ext_resource type="Script" path="res://scripts/base/camera.gd" id="1_ge6b0"]
 [ext_resource type="PackedScene" uid="uid://b6u86mo5lcsha" path="res://prefabs/dialog_box.tscn" id="1_riv6n"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
 [ext_resource type="PackedScene" uid="uid://cbpedxkwox2j5" path="res://prefabs/effect_collectible.tscn" id="4_310de"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crp334grxje5e" path="res://prefabs/button.tscn" id="5_knabb"]
 [ext_resource type="PackedScene" uid="uid://d2hwu2uaqacgf" path="res://prefabs/door.tscn" id="6_f80rh"]
 [ext_resource type="PackedScene" uid="uid://byes8l4lo73ov" path="res://prefabs/key.tscn" id="7_23iu2"]
-[ext_resource type="Script" path="res://scripts/lightning.gd" id="8_hlp6t"]
+[ext_resource type="Script" path="res://scripts/base/lightning.gd" id="8_hlp6t"]
 
 [node name="Sandbox" type="Node2D"]
 

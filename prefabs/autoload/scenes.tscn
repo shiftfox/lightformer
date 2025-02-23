@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw8iks81pqv0g"]
 
-[ext_resource type="Script" path="res://scripts/scenes.gd" id="1_fxao1"]
+[ext_resource type="Script" path="res://scripts/polish/scenes.gd" id="1_fxao1"]
 
 [sub_resource type="Animation" id="Animation_jygo3"]
 resource_name = "slide"

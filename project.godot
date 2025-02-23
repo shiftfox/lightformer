@@ -18,7 +18,7 @@ config/icon="res://graphics/sprites/icon.svg"
 [autoload]
 
 Scenes="*res://prefabs/autoload/scenes.tscn"
-Particles="*res://scripts/particles.gd"
+Particles="*res://scripts/polish/particles.gd"
 
 [display]
 

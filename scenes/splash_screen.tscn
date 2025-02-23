@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b03omhydo3ryc"]
 
-[ext_resource type="Script" path="res://scripts/splash_screen.gd" id="1_gbjyf"]
+[ext_resource type="Script" path="res://scripts/polish/splash_screen.gd" id="1_gbjyf"]
 [ext_resource type="Texture2D" uid="uid://clyrsltnobxkl" path="res://graphics/sprites/shiftfox2.png" id="1_ut602"]
 [ext_resource type="FontFile" uid="uid://dl3yvksyofnit" path="res://graphics/Peaberry-Base.otf" id="2_64ao5"]
 [ext_resource type="Texture2D" uid="uid://dpdvscantuf5r" path="res://graphics/sprites/circle.png" id="3_scv4p"]

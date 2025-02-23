@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crp334grxje5e"]
 
 [ext_resource type="Texture2D" uid="uid://b78o2vsy8jedk" path="res://graphics/sprites/button.png" id="1_of5oj"]
-[ext_resource type="Script" path="res://scripts/button.gd" id="1_v0f5k"]
+[ext_resource type="Script" path="res://scripts/puzzle/button.gd" id="1_v0f5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axij8"]
 size = Vector2(30, 8)

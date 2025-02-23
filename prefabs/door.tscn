@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2hwu2uaqacgf"]
 
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_vmfay"]
+[ext_resource type="Script" path="res://scripts/puzzle/door.gd" id="1_vmfay"]
 [ext_resource type="Texture2D" uid="uid://3ug3nfasrspa" path="res://graphics/sprites/door.png" id="2_7ukdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy55l"]

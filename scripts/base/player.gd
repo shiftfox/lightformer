@@ -1,6 +1,5 @@
 class_name Player extends CharacterBody2D
 
-@onready var health: Health = $Health
 @export var speed: float
 @export var lerp_speed: float
 @export var jump_force: float
@@ -52,8 +51,3 @@ func apply_effect(effect: Effect, duration: int) -> void:
 	await get_tree().create_timer(duration).timeout
 	effect._on_removed()
 	effect.queue_free()
-
-func on_health_death() -> void:
-	queue_free()
-	Scenes.refresh()
-	Particles.spawn("death", self)

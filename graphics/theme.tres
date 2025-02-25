@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dofm2ksjcvil6"]
+
+[ext_resource type="FontFile" uid="uid://dwmej8rll6fs8" path="res://graphics/PeaberryBase.ttf" id="1_t8yuv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm58o"]
+bg_color = Color(0.133333, 0.12549, 0.203922, 0.501961)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmydt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fruu"]
+bg_color = Color(0.326112, 0.311654, 0.461802, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu1yq"]
+bg_color = Color(0.133333, 0.12549, 0.203922, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b1ox"]
+bg_color = Color(0.458824, 0.443137, 0.619608, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+default_font = ExtResource("1_t8yuv")
+default_font_size = 25
+Button/styles/disabled = SubResource("StyleBoxFlat_qm58o")
+Button/styles/focus = SubResource("StyleBoxFlat_qmydt")
+Button/styles/hover = SubResource("StyleBoxFlat_4fruu")
+Button/styles/normal = SubResource("StyleBoxFlat_lu1yq")
+Button/styles/pressed = SubResource("StyleBoxFlat_8b1ox")

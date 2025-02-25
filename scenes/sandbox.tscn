@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm712ocpcav7w"]
+[gd_scene load_steps=10 format=3 uid="uid://besww4ql43hdh"]
 
 [ext_resource type="Script" path="res://scripts/base/camera.gd" id="1_ge6b0"]
-[ext_resource type="PackedScene" uid="uid://b6u86mo5lcsha" path="res://prefabs/dialog_box.tscn" id="1_riv6n"]
+[ext_resource type="PackedScene" path="res://prefabs/dialog_box.tscn" id="1_riv6n"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
 [ext_resource type="PackedScene" uid="uid://cbpedxkwox2j5" path="res://prefabs/effect_collectible.tscn" id="4_310de"]
 [ext_resource type="PackedScene" uid="uid://c7jr0ybbrbycm" path="res://prefabs/effects/night_vision_effect.tscn" id="5_7vinr"]

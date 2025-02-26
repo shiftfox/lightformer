@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://besww4ql43hdh"]
+[gd_scene load_steps=13 format=3 uid="uid://besww4ql43hdh"]
 
 [ext_resource type="Script" path="res://scripts/base/camera.gd" id="1_ge6b0"]
 [ext_resource type="PackedScene" path="res://prefabs/dialog_box.tscn" id="1_riv6n"]
 [ext_resource type="PackedScene" uid="uid://c0ol4a78thm14" path="res://prefabs/player.tscn" id="1_tqmqx"]
+[ext_resource type="PackedScene" uid="uid://2rcjmufsf00m" path="res://prefabs/pause_menu.tscn" id="2_pgear"]
 [ext_resource type="PackedScene" uid="uid://cbpedxkwox2j5" path="res://prefabs/effect_collectible.tscn" id="4_310de"]
 [ext_resource type="PackedScene" uid="uid://c7jr0ybbrbycm" path="res://prefabs/effects/night_vision_effect.tscn" id="5_7vinr"]
 [ext_resource type="PackedScene" uid="uid://crp334grxje5e" path="res://prefabs/button.tscn" id="5_knabb"]
 [ext_resource type="PackedScene" uid="uid://d2hwu2uaqacgf" path="res://prefabs/door.tscn" id="6_f80rh"]
 [ext_resource type="PackedScene" uid="uid://byes8l4lo73ov" path="res://prefabs/key.tscn" id="7_23iu2"]
 [ext_resource type="Script" path="res://scripts/base/lightning.gd" id="8_hlp6t"]
+[ext_resource type="PackedScene" uid="uid://bi4inbs14wpia" path="res://prefabs/npcs/npc.tscn" id="11_534dt"]
+[ext_resource type="Resource" uid="uid://di6ka7y8jkdir" path="res://resources/example.tres" id="12_gdg2t"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -27,11 +30,13 @@ offset_right = 432.0
 offset_bottom = 0.0
 grow_vertical = 0
 
+[node name="PauseController" parent="Canvas" instance=ExtResource("2_pgear")]
+
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("1_ge6b0")
-target = NodePath("../Player")
+target = NodePath("../Environment/Player")
 
 [node name="ColorRect" type="ColorRect" parent="Camera"]
 offset_left = -576.0
@@ -40,40 +45,46 @@ offset_right = 576.0
 offset_bottom = 324.0
 color = Color(0.122252, 0.122252, 0.122252, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_tqmqx")]
-
-[node name="StaticBody" type="StaticBody2D" parent="."]
-
-[node name="Polygon" type="Polygon2D" parent="StaticBody"]
-polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
-
-[node name="CollisionPolygon" type="CollisionPolygon2D" parent="StaticBody"]
-polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.05, 0.05, 0.05, 1)
-
-[node name="EffectCollectible" parent="." instance=ExtResource("4_310de")]
-position = Vector2(226, 137)
-duration = 5
-effect_prefab = ExtResource("5_7vinr")
-
-[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_knabb")]
-position = Vector2(185, 147)
-toggle = true
-should_enable_target = true
-target = NodePath("../Key")
-
-[node name="Door" parent="." instance=ExtResource("6_f80rh")]
-position = Vector2(557, 147)
-
-[node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_23iu2")]
-position = Vector2(70, 92)
-door = NodePath("../Door")
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 
 [node name="Lightning" type="Timer" parent="."]
 script = ExtResource("8_hlp6t")
 min_range = 15.0
 max_range = 25.0
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Player" parent="Environment" instance=ExtResource("1_tqmqx")]
+
+[node name="StaticBody" type="StaticBody2D" parent="Environment"]
+
+[node name="Polygon" type="Polygon2D" parent="Environment/StaticBody"]
+polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="Environment/StaticBody"]
+polygon = PackedVector2Array(-576, 163, 576, 163, 576, 326, -576, 326)
+
+[node name="EffectCollectible" parent="Environment" instance=ExtResource("4_310de")]
+position = Vector2(226, 137)
+duration = 5
+effect_prefab = ExtResource("5_7vinr")
+
+[node name="Button" parent="Environment" node_paths=PackedStringArray("target") instance=ExtResource("5_knabb")]
+position = Vector2(185, 147)
+toggle = true
+should_enable_target = true
+target = NodePath("../Key")
+
+[node name="Door" parent="Environment" instance=ExtResource("6_f80rh")]
+position = Vector2(557, 147)
+
+[node name="Key" parent="Environment" node_paths=PackedStringArray("door") instance=ExtResource("7_23iu2")]
+position = Vector2(70, 92)
+door = NodePath("../Door")
+
+[node name="NPC" parent="." instance=ExtResource("11_534dt")]
+position = Vector2(-218, 147)
+dialog = ExtResource("12_gdg2t")
 
 [connection signal="timeout" from="Lightning" to="Lightning" method="_on_timeout"]

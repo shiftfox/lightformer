@@ -2,7 +2,7 @@ class_name DialogBox extends ColorRect
 
 static var instance = self
 
-@onready var text: Label = $Text
+@onready var label: Label = $Text
 @export var char_time: float
 @export var time_between: float
 var char_timer: float
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		if character >= dialog.text.length():
 			wait_until(dialog)
 			return
-		text.text = dialog.text.substr(0, character + 1)
+		label.text = dialog.text.substr(0, character + 1)
 
 func wait_until(source: Dialog):
 	await get_tree().create_timer(time_between).timeout
@@ -36,7 +36,7 @@ func run(new: Dialog) -> void:
 	dialog = new
 	character = 0
 	char_timer = 0
-	text.text = ""
+	label.text = ""
 	show()
 
 static func show_dialog(new: Dialog) -> void:

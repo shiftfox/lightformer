@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dofm2ksjcvil6"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dofm2ksjcvil6"]
 
 [ext_resource type="FontFile" uid="uid://dwmej8rll6fs8" path="res://graphics/PeaberryBase.ttf" id="1_t8yuv"]
 
@@ -41,6 +41,13 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oknat"]
+bg_color = Color(0.69194, 0.683195, 0.819708, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [resource]
 default_font = ExtResource("1_t8yuv")
 default_font_size = 25
@@ -49,3 +56,4 @@ Button/styles/focus = SubResource("StyleBoxFlat_qmydt")
 Button/styles/hover = SubResource("StyleBoxFlat_4fruu")
 Button/styles/normal = SubResource("StyleBoxFlat_lu1yq")
 Button/styles/pressed = SubResource("StyleBoxFlat_8b1ox")
+Panel/styles/panel = SubResource("StyleBoxFlat_oknat")

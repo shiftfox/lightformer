@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://2rcjmufsf00m"]
+
+[ext_resource type="Theme" uid="uid://dofm2ksjcvil6" path="res://graphics/theme.tres" id="1_40068"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="2_ici0o"]
+
+[sub_resource type="Animation" id="Animation_blb61"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_50wc4"]
+resource_name = "scale"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v81jk"]
+_data = {
+"RESET": SubResource("Animation_blb61"),
+"scale": SubResource("Animation_50wc4")
+}
+
+[node name="PauseController" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_40068")
+script = ExtResource("2_ici0o")
+
+[node name="Menu" type="Panel" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.5
+offset_top = -81.0
+offset_right = 175.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(720, 405)
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -187.5
+offset_bottom = -136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -113.0
+offset_right = 91.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -18.0
+offset_right = 91.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 76.0
+offset_right = 91.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v81jk")
+}
+
+[connection signal="pressed" from="Menu/Resume" to="." method="toggle_pause"]
+[connection signal="pressed" from="Menu/Restart" to="." method="restart"]
+[connection signal="pressed" from="Menu/Quit" to="." method="quit"]
